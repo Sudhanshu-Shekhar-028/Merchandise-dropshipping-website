@@ -7,7 +7,7 @@ A clean and responsive **frontend-only dropshipping website** built using core w
 # Tech Stack
 - HTML5  
 - CSS3  
-- JavaScript (Vanilla)
+- JavaScript
 
 # Folder Structure
 ├── index.html        # Homepage
