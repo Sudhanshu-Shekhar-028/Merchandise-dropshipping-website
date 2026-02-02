@@ -1,6 +1,4 @@
-# Merchandise-dropshipping-website
-
-# Custom Dropshipping Website (Frontend)
+# Custom Merchandise Dropshipping Website (Frontend)
 
 A clean and responsive **frontend-only dropshipping website** built using core web technologies. Designed for smooth UI, simple navigation, and a clean interface.
 
