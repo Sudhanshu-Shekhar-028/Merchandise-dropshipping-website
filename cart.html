@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>La Pulga Store - Cart</title>
+    <style>
+      /* Add styles for the cart page */
+      .cart__container {
+        padding: 20px;
+        max-width: 1100px; /* Set a max width for the cart */
+        margin: 0 auto; /* Center the cart */
+      }
+
+      .cart__items {
+        display: flex;
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Space between items */
+      }
+
+      .cart__item {
+        display: flex; /* Align image and details in a row */
+        align-items: center; /* Center items vertically */
+        border: 1px solid #ccc; /* Border around each item */
+        padding: 10px; /* Padding inside each item */
+        border-radius: 5px; /* Rounded corners */
+      }
+
+      .cart__item-image {
+        width: 100px; /* Fixed width for images */
+        height: auto; /* Maintain aspect ratio */
+        margin-right: 20px; /* Space between image and details */
+      }
+
+      .cart__item-details {
+        display: flex; /* Use flexbox for alignment */
+        justify-content: space-between; /* Space between name and price */
+        align-items: center; /* Center items vertically */
+        flex-grow: 1; /* Allow details to take remaining space */
+      }
+
+      .cart__item-name {
+        flex-basis: 40%; /* Fixed space for product name */
+        overflow: hidden; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis for overflow text */
+        white-space: nowrap; /* Prevent text wrapping */
+      }
+
+      .cart__item-price {
+        flex-basis: 30%; /* Fixed space for price */
+        text-align: center; /* Center the price */
+      }
+
+      .cart__item-quantity {
+        width: 50px; /* Fixed width for quantity input */
+        margin: 0 10px; /* Space around quantity input */
+        border: none; /* Remove border */
+        text-align: center; /* Center text */
+      }
+
+      .remove__btn {
+        background-color: #ff4d4d; /* Red background for remove button */
+        color: white; /* White text */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        padding: 5px 10px; /* Padding for button */
+        cursor: pointer; /* Pointer cursor on hover */
+      }
+
+      .remove__btn:hover {
+        background-color: #ff1a1a; /* Darker red on hover */
+      }
+
+      .cart__summary {
+        margin-top: 20px; /* Space above summary */
+        padding: 10px; /* Padding for summary */
+        border: 1px solid #ccc; /* Border around summary */
+        border-radius: 5px; /* Rounded corners */
+        display: flex; /* Flexbox for summary layout */
+        justify-content: space-between; /* Space between text and button */
+        align-items: center; /* Center items vertically */
+      }
+
+      .checkout__btn {
+        padding: 10px 20px; /* Padding for button */
+        background-color: #008080; /* Button color */
+        color: white; /* Button text color */
+        border: none; /* No border */
+        border-radius: 5px; /* Rounded corners */
+        cursor: pointer; /* Pointer cursor on hover */
+      }
+
+      .checkout__btn:hover {
+        background-color: #4db8b8; /* Darker shade on hover */
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav__header">
+        <div class="nav__logo">
+          <a href="index.html" class="logo">La Pulga Elite</a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="products.html">Products</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="login.html">Log in</a></li>
+      </ul>
+      <div class="nav__search" id="nav-search">
+        <input type="text" placeholder="Search" />
+        <span><i class="ri-search-2-line"></i></span>
+      </div>
+      <div class="nav__cart" id="nav-cart">
+        <a href="cart.html">
+          <span><i class="ri-shopping-cart-line"></i></span>
+        </a>
+      </div>
+    </nav>
+
+    <section class="section__container cart__container">
+      <h2 class="section__header">Your Cart</h2>
+      <div class="cart__items">
+        <div class="cart__item">
+          <img src="assets/Kit1.webp" alt="Messi Barcelona 2008-09 Ucl Final Jersey" class="cart__item-image" />
+          <div class="cart__item-details">
+            <div class="cart__item-name">Messi Barcelona 2008-09 Ucl Final Jersey</div>
+            <div class="cart__item-price">Price: ₹5,000.00</div>
+            <button class="remove__btn">Remove</button>
+            <div>
+              <input type="number" value="1" min="1" class="cart__item-quantity" id="Kit1" />
+            </div>
+          </div>
+        </div>
+        <div class="cart__item">
+          <img src="assets/Kit3.webp" alt="Messi Argentina 2006-07 Home Full Sleeve Jersey" class="cart__item-image" />
+          <div class="cart__item-details">
+            <div class="cart__item-name">Messi Argentina 2006-07 Home Full Sleeve Jersey</div>
+            <div class="cart__item-price">Price: ₹8,000.00</div>
+            <button class="remove__btn">Remove</button>
+            <div>
+              <input type="number" value="1" min="1" class="cart__item-quantity" id="Kit3" />
+            </div>
+          </div>
+        </div>
+        <div class="cart__item">
+          <img src="assets/Kit6.webp" alt="Lionel Messi Argentina 2024 Copa America Home Jersey" class="cart__item-image" />
+          <div class="cart__item-details">
+            <div class="cart__item-name">Lionel Messi Argentina 2024 Copa America Home Jersey</div>
+            <div class="cart__item-price">Price: ₹6,000.00</div>
+            <button class="remove__btn">Remove</button>
+            <div>
+              <input type="number" value="1" min="1" class="cart__item-quantity" id="Kit6" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="cart__summary">
+        <h3>Cart Summary</h3>
+        <p>Total: ₹19,000.00</p>
+        <button class="checkout__btn">Proceed to Checkout</button>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="section__container footer__container">
+        <div class="footer__col">
+          <div class="footer__logo">
+            <a href="#" class="logo">La Pulga Elite</a>
+          </div>
+          <p>
+            From Rosario to the World – Messi’s Magic Lives Here !!
+          </p>
+          <ul class="footer__socials">
+            <li>
+              <a href="#"><i class="ri-instagram-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-github-fill"></i></a>
+            </li>
+            <li>
+              <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Services</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="#">Socials</a></li>
+            <li><a href="#">Blog</a></li>
+            <li><a href="#">Help Center</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Resources</h4>
+          <ul class="footer__links">
+            <li><a href="#">FAQs</a></li>
+            <li><a href="contact.html">Contact Support</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms</a></li>
+          </ul>
+        </div>
+        <div class="footer__col">
+          <h4>Support</h4>
+          <ul class="footer__links">
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="#">Returns and Refunds</a></li>
+            <li><a href="#">Cancelation Policy</a></li>
+            <li><a href="#">Security</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bar">
+        Copyright © 2024 - designed by Sudhanshu
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="main.js"></script>
+    <script>
+      function changeQuantity(itemId, change) {
+        const quantityInput = document.getElementById(itemId);
+        let currentQuantity = parseInt(quantityInput.value);
+        currentQuantity += change;
+        if (currentQuantity < 1) currentQuantity = 1; // Prevent negative quantity
+        quantityInput.value = currentQuantity;
+      }
+    </script>
+  </body>
+</html>
