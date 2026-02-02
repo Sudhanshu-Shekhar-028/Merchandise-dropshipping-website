@@ -10,6 +10,9 @@ A clean and responsive **frontend-only dropshipping website** built using core w
 - JavaScript
 
 # Folder Structure
+
+```
+.
 ├── index.html        # Homepage
 ├── products.html     # Product listing page
 ├── cart.html         # Cart UI
@@ -19,3 +22,4 @@ A clean and responsive **frontend-only dropshipping website** built using core w
 ├── styles.css        # Global styles
 ├── main.js           # Main JavaScript logic
 └── assets/           # Images & static assets
+
